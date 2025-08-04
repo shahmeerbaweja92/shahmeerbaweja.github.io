@@ -272,13 +272,13 @@ body {
 }
 
 .hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-5xl);
+    display: flex;
+    flex-direction: column;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
+    gap: var(--spacing-4xl);
 }
 
 .hero-title {
@@ -339,13 +339,35 @@ body {
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-xl);
+    width: 100%;
+    max-width: 600px;
+}
+
+.flow-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, var(--text-primary), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.flow-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 400;
 }
 
 .first-principles-flow {
     width: 100%;
     background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(255, 255, 255, 0.05) 100%);
     border-radius: 25px;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-2xl);
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 
         0 20px 40px rgba(0, 0, 0, 0.1),
@@ -353,10 +375,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-xl);
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
+    min-height: 600px;
 }
 
 /* Energy flow background effect */
@@ -502,7 +525,7 @@ body {
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -1470,7 +1493,6 @@ body {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .hero-container {
-        grid-template-columns: 1fr;
         text-align: center;
         gap: var(--spacing-3xl);
     }
