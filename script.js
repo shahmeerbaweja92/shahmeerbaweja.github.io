@@ -562,12 +562,12 @@ class LoadingScreen {
     }
 }
 
-// Particle System for Background Effect
-class ParticleSystem {
+// Gear System for Background Effect
+class GearSystem {
     constructor() {
         this.canvas = this.createCanvas();
         this.ctx = this.canvas.getContext('2d');
-        this.particles = [];
+        this.gears = [];
         this.mouse = { x: 0, y: 0 };
         
         this.init();
@@ -583,7 +583,7 @@ class ParticleSystem {
             height: 100%;
             pointer-events: none;
             z-index: -1;
-            opacity: 0.6;
+            opacity: 0.4;
         `;
         document.body.appendChild(canvas);
         return canvas;
@@ -591,7 +591,7 @@ class ParticleSystem {
 
     init() {
         this.resize();
-        this.createParticles();
+        this.createGears();
         this.bindEvents();
         this.animate();
     }
@@ -607,67 +607,108 @@ class ParticleSystem {
     resize() {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
+        this.gears = [];
+        this.createGears();
     }
 
-    createParticles() {
-        const particleCount = Math.floor(window.innerWidth / 20);
+    createGears() {
+        const gearCount = Math.floor(window.innerWidth / 150) + Math.floor(window.innerHeight / 150);
         
-        for (let i = 0; i < particleCount; i++) {
-            this.particles.push({
+        for (let i = 0; i < gearCount; i++) {
+            this.gears.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
-                vx: (Math.random() - 0.5) * 0.5,
-                vy: (Math.random() - 0.5) * 0.5,
-                size: Math.random() * 2 + 1,
-                opacity: Math.random() * 0.5 + 0.2
+                radius: Math.random() * 30 + 20,
+                teeth: Math.floor(Math.random() * 8) + 8,
+                rotation: Math.random() * Math.PI * 2,
+                rotationSpeed: (Math.random() - 0.5) * 0.02,
+                opacity: Math.random() * 0.3 + 0.1,
+                strokeWidth: Math.random() * 1.5 + 0.5
             });
         }
+    }
+
+    drawGear(gear) {
+        const { x, y, radius, teeth, rotation, opacity, strokeWidth } = gear;
+        
+        this.ctx.save();
+        this.ctx.translate(x, y);
+        this.ctx.rotate(rotation);
+        
+        // Draw gear outline
+        this.ctx.beginPath();
+        this.ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
+        this.ctx.lineWidth = strokeWidth;
+        
+        const toothHeight = radius * 0.2;
+        const angleStep = (Math.PI * 2) / teeth;
+        
+        for (let i = 0; i < teeth; i++) {
+            const angle = i * angleStep;
+            const nextAngle = (i + 1) * angleStep;
+            
+            // Inner circle point
+            const innerX1 = Math.cos(angle) * radius;
+            const innerY1 = Math.sin(angle) * radius;
+            
+            // Outer tooth points
+            const toothAngle1 = angle + angleStep * 0.2;
+            const toothAngle2 = angle + angleStep * 0.8;
+            
+            const toothX1 = Math.cos(toothAngle1) * (radius + toothHeight);
+            const toothY1 = Math.sin(toothAngle1) * (radius + toothHeight);
+            
+            const toothX2 = Math.cos(toothAngle2) * (radius + toothHeight);
+            const toothY2 = Math.sin(toothAngle2) * (radius + toothHeight);
+            
+            const innerX2 = Math.cos(nextAngle) * radius;
+            const innerY2 = Math.sin(nextAngle) * radius;
+            
+            if (i === 0) {
+                this.ctx.moveTo(innerX1, innerY1);
+            }
+            
+            this.ctx.lineTo(toothX1, toothY1);
+            this.ctx.lineTo(toothX2, toothY2);
+            this.ctx.lineTo(innerX2, innerY2);
+        }
+        
+        this.ctx.closePath();
+        this.ctx.stroke();
+        
+        // Draw inner circle
+        this.ctx.beginPath();
+        this.ctx.arc(0, 0, radius * 0.3, 0, Math.PI * 2);
+        this.ctx.stroke();
+        
+        // Draw center dot
+        this.ctx.beginPath();
+        this.ctx.arc(0, 0, radius * 0.1, 0, Math.PI * 2);
+        this.ctx.fillStyle = `rgba(0, 212, 255, ${opacity * 1.5})`;
+        this.ctx.fill();
+        
+        this.ctx.restore();
     }
 
     animate() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
-        this.particles.forEach((particle, index) => {
-            // Update position
-            particle.x += particle.vx;
-            particle.y += particle.vy;
+        this.gears.forEach((gear) => {
+            // Update rotation
+            gear.rotation += gear.rotationSpeed;
             
-            // Boundary check
-            if (particle.x < 0 || particle.x > this.canvas.width) particle.vx *= -1;
-            if (particle.y < 0 || particle.y > this.canvas.height) particle.vy *= -1;
-            
-            // Mouse interaction
-            const dx = this.mouse.x - particle.x;
-            const dy = this.mouse.y - particle.y;
+            // Mouse interaction - speed up gears near mouse
+            const dx = this.mouse.x - gear.x;
+            const dy = this.mouse.y - gear.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
             
-            if (distance < 100) {
-                const force = (100 - distance) / 100;
-                particle.x -= dx * force * 0.01;
-                particle.y -= dy * force * 0.01;
+            if (distance < 150) {
+                const speedMultiplier = (150 - distance) / 150 * 3 + 1;
+                gear.rotation += gear.rotationSpeed * speedMultiplier;
             }
             
-            // Draw particle
-            this.ctx.beginPath();
-            this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            this.ctx.fillStyle = `rgba(0, 212, 255, ${particle.opacity})`;
-            this.ctx.fill();
-            
-            // Connect nearby particles
-            this.particles.slice(index + 1).forEach(otherParticle => {
-                const dx = particle.x - otherParticle.x;
-                const dy = particle.y - otherParticle.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < 80) {
-                    this.ctx.beginPath();
-                    this.ctx.moveTo(particle.x, particle.y);
-                    this.ctx.lineTo(otherParticle.x, otherParticle.y);
-                    this.ctx.strokeStyle = `rgba(0, 212, 255, ${0.1 * (80 - distance) / 80})`;
-                    this.ctx.lineWidth = 0.5;
-                    this.ctx.stroke();
-                }
-            });
+            // Draw gear
+            this.drawGear(gear);
         });
         
         requestAnimationFrame(() => this.animate());
@@ -866,9 +907,9 @@ document.addEventListener('DOMContentLoaded', () => {
     new ProjectFilter();
     new PerformanceMonitor();
     
-    // Initialize particle system if not on mobile
+    // Initialize gear system if not on mobile
     if (window.innerWidth > 768) {
-        new ParticleSystem();
+        new GearSystem();
     }
     
     // Add smooth reveal animation for page load
@@ -951,7 +992,7 @@ window.PortfolioApp = {
     ChartController,
     FormController,
     BackToTopButton,
-    ParticleSystem,
+    GearSystem,
     ProjectFilter,
     PerformanceMonitor,
     ThemeController
