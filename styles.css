@@ -160,14 +160,14 @@ body {
 }
 
 .btn-primary {
-    background: var(--gradient-primary);
+    background: transparent;
     color: var(--text-primary);
-    box-shadow: var(--shadow-neon);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-primary:hover {
+    background: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
 }
 
 .btn-secondary {
@@ -182,14 +182,14 @@ body {
 }
 
 .btn-download {
-    background: var(--gradient-primary);
+    background: transparent;
     color: var(--text-primary);
-    box-shadow: var(--shadow-neon);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-download:hover {
+    background: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
 }
 
 .btn-download i {
