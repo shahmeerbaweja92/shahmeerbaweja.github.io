@@ -1107,7 +1107,7 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-2xl);
 }
 
@@ -1661,6 +1661,10 @@ body {
     .image-container {
         width: 320px;
         height: 320px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 }
 
