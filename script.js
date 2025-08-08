@@ -739,7 +739,7 @@ class ProjectFilter {
             flex-wrap: wrap;
         `;
         
-        const filters = ['All', 'Machine Learning', 'Data Visualization', 'Analytics', 'Big Data'];
+        const filters = ['Data Visualization', 'Analytics', 'Big Data'];
         
         filters.forEach((filter, index) => {
             const button = document.createElement('button');
