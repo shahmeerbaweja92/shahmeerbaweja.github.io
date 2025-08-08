@@ -732,36 +732,11 @@ class ProjectFilter {
         const filterContainer = document.createElement('div');
         filterContainer.className = 'project-filters';
         filterContainer.style.cssText = `
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
+            display: none;
         `;
-        
-        const filters = ['Data Visualization', 'Analytics', 'Big Data'];
-        
-        filters.forEach((filter, index) => {
-            const button = document.createElement('button');
-            button.className = `filter-btn ${index === 0 ? 'active' : ''}`;
-            button.textContent = filter;
-            button.dataset.filter = filter.toLowerCase().replace(' ', '-');
-            button.style.cssText = `
-                padding: 0.5rem 1.5rem;
-                border: 2px solid #00d4ff;
-                background: transparent;
-                color: #00d4ff;
-                border-radius: 25px;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                font-weight: 500;
-            `;
-            
-            filterContainer.appendChild(button);
-        });
-        
+        // No filters to render
         const sectionHeader = projectsSection.querySelector('.section-header');
-        sectionHeader.after(filterContainer);
+        // Do not append the filterContainer since we are removing all filter buttons
     }
 
     bindEvents() {
