@@ -439,14 +439,696 @@
       </div>
     </section>
 
-    <!-- Placeholder Sections (keep if you have content later; remove if not needed) -->
+ <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">Selected work in simulation, modeling, and ML-driven engineering</p>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Showcasing my mechanical engineering expertise</p>
             </div>
-            <p style="text-align:center; opacity:0.8;">(Coming soon) Add project cards here.</p>
+            <div class="projects-grid">
+                <!-- 1) Postdoc: AI-Driven Surrogate Modeling -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI-Driven Surrogate Modeling for Multiaxial Creep (Argonne)</h3>
+                        <p class="project-description">
+                            Developed an active-learning-driven Gaussian Process surrogate to accelerate high-fidelity CPFE
+                            predictions of creep rupture in Alloy 709 and LPBF 316H under multiaxial stress states using MOOSE + NEML.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">MOOSE</span>
+                            <span class="tech-tag">NEML</span>
+                            <span class="tech-tag">CPFE</span>
+                            <span class="tech-tag">Gaussian Process</span>
+                            <span class="tech-tag">Active Learning</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">5×</span>
+                                <span class="metric-label">Cost Reduction</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">85%</span>
+                                <span class="metric-label">Error Drop</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2) PhD: Automated Multi-Axial CPFE -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Automated Multi-Axial CPFE Simulations (Magnesium Alloys)</h3>
+                        <p class="project-description">
+                            Ran hundreds of 3D CPFE simulations to study the coupled effects of texture, grain orientation,
+                            triaxiality, and strain rate on anisotropy, twinning activity, localization, and ductility in HCP metals.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Abaqus UMAT</span>
+                            <span class="tech-tag">FORTRAN</span>
+                            <span class="tech-tag">Neper</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">HPC Automation</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">10×</span>
+                                <span class="metric-label">Faster Turnaround</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 3) Semi-Supervised Damage Localization -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Semi-Supervised Damage Localization using Deep Learning</h3>
+                        <p class="project-description">
+                            Built a semi-supervised pipeline for post-earthquake masonry damage detection using DenseNet-201
+                            and Grad-CAM++ localization on real post-disaster imagery without pixel-level labels.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">DenseNet-201</span>
+                            <span class="tech-tag">Grad-CAM++</span>
+                            <span class="tech-tag">Computer Vision</span>
+                            <span class="tech-tag">Deep Learning</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">99.4%</span>
+                                <span class="metric-label">Train Accuracy</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">70.2%</span>
+                                <span class="metric-label">Test Accuracy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 4) Deformation Twinning (Survey / Research) -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Deformation Twinning in Crystalline Metals</h3>
+                        <p class="project-description">
+                            Investigated twinning mechanisms across FCC, BCC, and HCP metals, linking stacking-fault energy,
+                            grain size, and orientation to twin nucleation, anisotropy, and tension-compression asymmetry.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Crystal Plasticity</span>
+                            <span class="tech-tag">Twinning</span>
+                            <span class="tech-tag">EBSD</span>
+                            <span class="tech-tag">Microstructure</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">FCC/BCC/HCP</span>
+                                <span class="metric-label">Materials Studied</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 5) Dislocation-Density Based Crystal Plasticity -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Dislocation-Density Based Modeling of Crystal Plasticity</h3>
+                        <p class="project-description">
+                            Developed a continuum dislocation-density framework bridging discrete dislocation dynamics and continuum plasticity,
+                            implemented with a Galerkin finite element solution in MATLAB to reproduce analytical stress fields.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Dislocation Mechanics</span>
+                            <span class="tech-tag">Continuum Modeling</span>
+                            <span class="tech-tag">MATLAB</span>
+                            <span class="tech-tag">Galerkin FEM</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">GND</span>
+                                <span class="metric-label">Density Evolution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 6) FEM Solver: Linearized Elasticity -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Finite Element Solver for Linearized Elasticity (MATLAB)</h3>
+                        <p class="project-description">
+                            Built a full 2D elasticity FEM solver from scratch including Q4/Q9 elements, Gaussian quadrature,
+                            global assembly, boundary conditions, and convergence validation against beam theory.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Finite Elements</span>
+                            <span class="tech-tag">MATLAB</span>
+                            <span class="tech-tag">Q4/Q9</span>
+                            <span class="tech-tag">Numerical Integration</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">Locking</span>
+                                <span class="metric-label">Mitigation Studied</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 7) SpaceX Hyperloop -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">SpaceX Hyperloop – Rocket-Propelled Pod Structural Design</h3>
+                        <p class="project-description">
+                            Designed a robust load-bearing aluminum chassis and improved aerodynamic shell concept for a hydrogen-peroxide
+                            rocket-powered pod, integrating propulsion and tank supports under high-thrust constraints.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SolidWorks</span>
+                            <span class="tech-tag">Inventor</span>
+                            <span class="tech-tag">Structural Design</span>
+                            <span class="tech-tag">CFD Concepts</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">40%</span>
+                                <span class="metric-label">Mass Reduction</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">130%</span>
+                                <span class="metric-label">Top Speed Gain</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 8) Computational Mechanics: FEniCS Elastostatics/Elastodynamics -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Computational Mechanics – Elastostatics & Elastodynamics (FEniCS)</h3>
+                        <p class="project-description">
+                            Derived weak forms and implemented 2D elasticity in FEniCS with traction and displacement boundary conditions,
+                            including transient vibration decay using backward-Euler time integration and mesh convergence verification.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">FEniCS</span>
+                            <span class="tech-tag">PDEs</span>
+                            <span class="tech-tag">Time Integration</span>
+                            <span class="tech-tag">Continuum Mechanics</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">2D</span>
+                                <span class="metric-label">Elasticity Models</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 9) Tool Wear in Hard Turning (CBN Tools) -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="900">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Tool Wear in Dry Hard Turning (CBN Tools)</h3>
+                        <p class="project-description">
+                            Analyzed the influence of hardness and microstructure on flank and crater wear in hard turning across multiple steels,
+                            identifying carbide content as a key driver of abrasive wear and tool-life reduction at high speeds.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Manufacturing</span>
+                            <span class="tech-tag">Tool Wear</span>
+                            <span class="tech-tag">Steel Microstructure</span>
+                            <span class="tech-tag">Data Analysis</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">2×</span>
+                                <span class="metric-label">Wear Rate Increase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 10) Molecular Dynamics: Cu Nanoparticle Impact on Al (LAMMPS) -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Molecular Dynamics – Cu Nanoparticle Collision on Al Surface</h3>
+                        <p class="project-description">
+                            Simulated high-speed nanoparticle impacts using LAMMPS to study dislocation formation and adhesion,
+                            analyzing defect evolution with OVITO in systems containing up to millions of atoms.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">LAMMPS</span>
+                            <span class="tech-tag">Molecular Dynamics</span>
+                            <span class="tech-tag">OVITO</span>
+                            <span class="tech-tag">Defect Analysis</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">~1000 m/s</span>
+                                <span class="metric-label">Impact Regime</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">9M</span>
+                                <span class="metric-label">Atoms Simulated</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 11) CFD Validation: Cylinder + NACA 0012 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="1100">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">CFD Validation – Flow over Cylinder & NACA 0012 Airfoil</h3>
+                        <p class="project-description">
+                            Validated benchmark aerodynamic phenomena including vortex shedding and stall using ANSYS Fluent,
+                            generating meshes and simulating incompressible flow across Reynolds numbers and angles of attack.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">ANSYS Fluent</span>
+                            <span class="tech-tag">CFD</span>
+                            <span class="tech-tag">Turbulence Modeling</span>
+                            <span class="tech-tag">Validation</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">NACA 0012</span>
+                                <span class="metric-label">Airfoil Case</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 12) EV Batteries: Performance/Safety/Thermal Management -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="1200">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Li-Ion Batteries for EVs – Performance, Safety & Thermal Analysis</h3>
+                        <p class="project-description">
+                            Conducted a system-level study of Li-ion batteries and emerging chemistries, assessing degradation,
+                            safety risks, and thermal management strategies to maintain cell temperatures below critical thresholds.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Thermal Management</span>
+                            <span class="tech-tag">Battery Safety</span>
+                            <span class="tech-tag">System Trade Study</span>
+                            <span class="tech-tag">EV Energy Storage</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">&lt; 50°C</span>
+                                <span class="metric-label">Target Cell Temp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 13) AlphaTech: Kava Smart Mug -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="1300">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">AlphaTech – Kava Smart Mug Product Development</h3>
+                        <p class="project-description">
+                            Co-founded a student startup to design and commercialize a portable self-brewing, temperature-controlled smart mug.
+                            Led mechanical design and prototyping, heating integration, and manufacturing planning with a full commercialization study.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Product Design</span>
+                            <span class="tech-tag">Prototyping</span>
+                            <span class="tech-tag">Thermal Systems</span>
+                            <span class="tech-tag">Commercialization</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">11 mo</span>
+                                <span class="metric-label">Profitability Projection</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">2200+</span>
+                                <span class="metric-label">Units (Year 1)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 14) Direct Metal Deposition (DMD) Survey -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="1400">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Direct Metal Deposition (DMD) – Additive Manufacturing Survey</h3>
+                        <p class="project-description">
+                            Produced a comprehensive review of laser-assisted additive manufacturing focused on DMD,
+                            examining melt pool dynamics, process parameters, hybrid control, and process-property correlations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Additive Manufacturing</span>
+                            <span class="tech-tag">DMD</span>
+                            <span class="tech-tag">Process Optimization</span>
+                            <span class="tech-tag">Literature Review</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">74 pages</span>
+                                <span class="metric-label">Technical Report</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 15) Valve Redesign: DFM/DFA -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="1500">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Valve Redesign – DFM/DFA Optimization</h3>
+                        <p class="project-description">
+                            Co-led a DFM/DFA redesign of a 10-part valve assembly, introducing a twist-lock mechanism to reduce part count,
+                            improve manufacturability, and increase assembly efficiency while reducing manufacturing index.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">DFM/DFA</span>
+                            <span class="tech-tag">Tolerance Analysis</span>
+                            <span class="tech-tag">ANSI Fits</span>
+                            <span class="tech-tag">Axiomatic Design</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">45%</span>
+                                <span class="metric-label">Assembly Efficiency</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">31%</span>
+                                <span class="metric-label">Efficiency Gain</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 16) YBCO HTS Dipole Magnet (COMSOL) -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="1600">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">HTS Dipole Magnet Design (YBCO) – COMSOL Multiphysics</h3>
+                        <p class="project-description">
+                            Designed a high-temperature superconducting dipole magnet using YBCO coils and coupled EM-thermal-structural
+                            simulations. Verified field uniformity, cryogenic stability, and structural integrity under Lorentz forces.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">COMSOL</span>
+                            <span class="tech-tag">Electromagnetics</span>
+                            <span class="tech-tag">Heat Transfer</span>
+                            <span class="tech-tag">Structural Analysis</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">2.19 T</span>
+                                <span class="metric-label">Peak Dipole Field</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">20 K</span>
+                                <span class="metric-label">Operating Temp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 17) Lumen Motors Internship: Front Chassis -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="1700">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Lumen Motors – Front Chassis Design Optimization</h3>
+                        <p class="project-description">
+                            Re-engineered a complex sheet-metal concept into a tubular-frame architecture for an EV prototype front chassis,
+                            achieving major weight reduction while maintaining strength and a functional crumple zone.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SolidWorks</span>
+                            <span class="tech-tag">FEA</span>
+                            <span class="tech-tag">Chassis Design</span>
+                            <span class="tech-tag">Manufacturability</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">~70%</span>
+                                <span class="metric-label">Weight Reduction</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">45,000 N</span>
+                                <span class="metric-label">Impact Load Case</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 18) Green Propellants Trade Study -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="1800">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Green Propellants – Performance, Safety & Trade Study</h3>
+                        <p class="project-description">
+                            Co-led a comparative evaluation of green monopropellants as hydrazine alternatives, assessing propulsion performance,
+                            handling safety, and system-level improvements based on published experimental datasets.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Rocket Propulsion</span>
+                            <span class="tech-tag">Trade Study</span>
+                            <span class="tech-tag">Data Visualization</span>
+                            <span class="tech-tag">Safety</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">12%</span>
+                                <span class="metric-label">Higher Isp</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">~50%</span>
+                                <span class="metric-label">System Improvement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 19) Formula SAE: Intake + Fuel Tank Redesign -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="1900">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Formula SAE – Intake System Design & Fuel Tank Redesign</h3>
+                        <p class="project-description">
+                            Designed and validated intake and fuel systems for UH’s inaugural FSAE car, reducing intake pressure drop through CFD
+                            and redesigning the fuel tank with baffles and sump geometry to prevent starvation and increase capacity.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SolidWorks</span>
+                            <span class="tech-tag">CFD</span>
+                            <span class="tech-tag">Intake Design</span>
+                            <span class="tech-tag">Fuel System</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">262→64 Pa</span>
+                                <span class="metric-label">Pressure Drop</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">70%</span>
+                                <span class="metric-label">Capacity Increase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 20) Flip-Switch Actuation Mechanism -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="2000">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Flip-Switch Actuation Mechanism (Belt Drive + Power Screw)</h3>
+                        <p class="project-description">
+                            Designed a compact mechanism converting rotary motion into a precise linear stroke using a belt transmission and
+                            single-start power screw. Completed motion analysis, shaft sizing, belt-tension calculations, and assembly drawings.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Machine Design</span>
+                            <span class="tech-tag">SolidWorks</span>
+                            <span class="tech-tag">Power Screw</span>
+                            <span class="tech-tag">Belt Drive</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">82.9 N</span>
+                                <span class="metric-label">Actuation Force</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">0.21 N·m</span>
+                                <span class="metric-label">Required Torque</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 21) Compound Reverted Geartrain -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="2100">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Compound Reverted Geartrain Design (20 hp)</h3>
+                        <p class="project-description">
+                            Designed a multi-stage gear reducer delivering 20 hp with high efficiency by selecting gear ratios,
+                            verifying AGMA bending/contact stresses, and completing shaft and bearing fatigue analyses.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Gear Design</span>
+                            <span class="tech-tag">AGMA</span>
+                            <span class="tech-tag">Fatigue Analysis</span>
+                            <span class="tech-tag">Machine Elements</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">1750→85 RPM</span>
+                                <span class="metric-label">Speed Reduction</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">&gt;95%</span>
+                                <span class="metric-label">Efficiency</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 22) Autonomous Gravity-Powered Launcher (Individual) -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="2200">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Autonomous Gravity-Powered Launcher (Individual)</h3>
+                        <p class="project-description">
+                            Designed a fully mechanical gravity-powered launcher to autonomously fire ten steel balls into a target bucket,
+                            using a mass-triggered release, timing separator wheel, and slide launcher for reliable sequencing.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Mechanism Design</span>
+                            <span class="tech-tag">Energy Transfer</span>
+                            <span class="tech-tag">CAD</span>
+                            <span class="tech-tag">Google SketchUp</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">10</span>
+                                <span class="metric-label">Projectiles</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">12 in</span>
+                                <span class="metric-label">Target Distance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 23) Autonomous Gravity-Powered Launcher (Team) -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="2300">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Autonomous Gravity-Powered Launcher (Team Build)</h3>
+                        <p class="project-description">
+                            Designed and built a foam-core based gravity-powered marble launcher with a trapdoor separator and dampening chamber,
+                            achieving consistent timing and accuracy under strict weight and height constraints.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Team Design</span>
+                            <span class="tech-tag">Mechanisms</span>
+                            <span class="tech-tag">Prototyping</span>
+                            <span class="tech-tag">Testing</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">1.02–1.2 s</span>
+                                <span class="metric-label">Launch Spacing</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">&lt;4 lb</span>
+                                <span class="metric-label">Device Weight</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 24) Feasibility of Solar Power in the US -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="2400">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Feasibility of Solar Power in the United States</h3>
+                        <p class="project-description">
+                            Evaluated technical and economic feasibility of solar PV and solar thermal systems, including cost trends,
+                            incentives, land-use considerations, and long-term projections for national deployment and grid impact.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Energy Systems</span>
+                            <span class="tech-tag">Solar PV</span>
+                            <span class="tech-tag">Techno-Economics</span>
+                            <span class="tech-tag">Policy</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">485%</span>
+                                <span class="metric-label">PV Growth (2010–2013)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 25) Design of Modern Aircraft -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="2500">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">Design of Modern Aircraft – Structures & Subsystems</h3>
+                        <p class="project-description">
+                            Produced an illustrated report analyzing aircraft structural components and subsystem integration,
+                            covering fuselage, wings, empennage, landing gear, propulsion evolution, and aerodynamic efficiency trade-offs.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Aerospace Structures</span>
+                            <span class="tech-tag">Aerodynamics</span>
+                            <span class="tech-tag">Systems Integration</span>
+                            <span class="tech-tag">Technical Writing</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">Boeing/Airbus</span>
+                                <span class="metric-label">Benchmark Focus</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 26) NAE Grand Challenges: Urban Infrastructure -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="2600">
+                    <div class="project-image placeholder"></div>
+                    <div class="project-content">
+                        <h3 class="project-title">NAE Grand Challenges – Smart Urban Infrastructure Concept</h3>
+                        <p class="project-description">
+                            Co-led a systems-level concept for urban mobility improvements using real-time wireless sensing,
+                            adaptive traffic control strategies, and PLC-based automated parking to reduce delays and improve space utilization.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Systems Engineering</span>
+                            <span class="tech-tag">Smart Mobility</span>
+                            <span class="tech-tag">Sensors</span>
+                            <span class="tech-tag">Control</span>
+                        </div>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">10–15%</span>
+                                <span class="metric-label">Delay Reduction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
