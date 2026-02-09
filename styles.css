@@ -1056,45 +1056,50 @@ body {
     gap: var(--spacing-lg);
 }
 
-.skill-item {
+.skill-bar-item {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: 8px;
+    margin-bottom: 14px;
 }
 
-.skill-name {
+.skill-bar-item .skill-name {
     font-weight: 600;
     color: var(--text-primary);
+    font-size: var(--font-size-sm);
 }
 
+/* use existing .skill-bar container but allow it to work with span */
 .skill-bar {
-    height: 8px;
+    height: 10px;
     background: var(--bg-tertiary);
-    border-radius: 4px;
+    border-radius: 999px;
     overflow: hidden;
-    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.skill-progress {
+/* actual fill */
+.skill-bar span {
+    display: block;
     height: 100%;
+    width: 0; /* default if inline width missing */
     background: var(--gradient-primary);
-    border-radius: 4px;
-    transition: width 1s ease-in-out;
+    border-radius: 999px;
+    transition: width 1.2s ease-in-out;
     position: relative;
 }
 
-.skill-progress::after {
+/* subtle shimmer */
+.skill-bar span::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    animation: shimmer 2s infinite;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transform: translateX(-100%);
+    animation: shimmer2 2.2s infinite;
 }
 
-@keyframes shimmer {
+@keyframes shimmer2 {
     0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
 }
